@@ -5,9 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/Gu\xEDa1_Conexi\xF3nM\xF3vil.unity"
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: b0458341154e91143bac54e57d96824a
+  - enabled: 1
+    path: Assets/Scenes/Touch.unity
+    guid: 7979da9f03841cc4f817c53d0ef9878a
+  - enabled: 1
+    path: Assets/Scenes/MultiTouch.unity
+    guid: 48ae4474b7248b747b599c56af2473aa
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
