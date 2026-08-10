@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class PlayerInputReader : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;
     public Transform targetObject;
     public float speed = 5f;
-    public Text txtVectorInfo;
+    public TMP_Text txtVectorInfo;
 
     private InputAction moveAction;
     private InputAction tapAction;
@@ -40,7 +42,10 @@ public class PlayerInputReader : MonoBehaviour
         {
             Vector2 moveInput = moveAction.ReadValue<Vector2>();
             Vector3 movement = new Vector3(moveInput.x, 0, moveInput.y);
-
+            if (moveInput.sqrMagnitude > 0.01f)
+            {
+                Debug.Log("MOVE RECIBIDO: " + moveInput);
+            }
             if (targetObject != null)
             {
                 targetObject.Translate(movement * speed * Time.deltaTime, Space.World);

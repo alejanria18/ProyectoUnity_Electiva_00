@@ -51,7 +51,10 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -65,7 +68,10 @@
           {
             "name": "AudioListener",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -108,7 +114,10 @@
           {
             "name": "Camera",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -128,7 +137,10 @@
           {
             "name": "Cubemap",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -148,7 +160,10 @@
           {
             "name": "EditorExtension",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -162,7 +177,10 @@
           {
             "name": "GameObject",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -194,7 +212,10 @@
           {
             "name": "LevelGameManager",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -202,7 +223,10 @@
           {
             "name": "Light",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -228,7 +252,10 @@
           {
             "name": "LightmapSettings",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -242,7 +269,10 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -250,7 +280,10 @@
           {
             "name": "Mesh",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -258,7 +291,10 @@
           {
             "name": "MeshFilter",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -266,7 +302,10 @@
           {
             "name": "MeshRenderer",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -274,7 +313,10 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -288,7 +330,10 @@
           {
             "name": "MonoScript",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -296,7 +341,10 @@
           {
             "name": "NamedObject",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -334,7 +382,10 @@
           {
             "name": "RectTransform",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -348,7 +399,10 @@
           {
             "name": "RenderSettings",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -380,7 +434,10 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -406,7 +463,10 @@
           {
             "name": "Sprite",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -905,22 +965,25 @@
         "dependencies": [
           {
             "name": "BoxCollider",
-            "scenes": [],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
-            "name": "Collider",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Pad.unity"
             ],
             "dependencyType": 0,
             "icon": null
           },
           {
+            "name": "Collider",
+            "scenes": [],
+            "dependencyType": 1,
+            "icon": null
+          },
+          {
             "name": "MeshCollider",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1325,7 +1388,10 @@
           {
             "name": "Font",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1368,7 +1434,10 @@
           {
             "name": "Canvas",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1382,7 +1451,10 @@
           {
             "name": "CanvasRenderer",
             "scenes": [
-              "Assets/Scenes/Gu\u00EDa1_Conexi\u00F3nM\u00F3vil.unity"
+              "Assets/Scenes/Menu.unity",
+              "Assets/Scenes/MultiTouch.unity",
+              "Assets/Scenes/Pad.unity",
+              "Assets/Scenes/Touch.unity"
             ],
             "dependencyType": 0,
             "icon": null

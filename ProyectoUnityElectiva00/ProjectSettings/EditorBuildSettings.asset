@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MultiTouch.unity
     guid: 48ae4474b7248b747b599c56af2473aa
+  - enabled: 0
+    path: Assets/Scenes/VirtualPad1.unity
+    guid: 596eea3df9f1c214fbfa231b4a10445b
+  - enabled: 1
+    path: Assets/Scenes/Pad.unity
+    guid: 927e72806e3661a43967b43c57eb2097
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
