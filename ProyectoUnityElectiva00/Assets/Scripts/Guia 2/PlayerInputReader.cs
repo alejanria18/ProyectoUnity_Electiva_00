@@ -1,60 +1,71 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 using TMPro;
-
 
 public class PlayerInputReader : MonoBehaviour
 {
-    [SerializeField] private PlayerInput playerInput;
-    public Transform targetObject;
-    public float speed = 5f;
-    public TMP_Text txtVectorInfo;
+    [Header("Input")]
+    [SerializeField] private InputActionReference moveAction;
 
-    private InputAction moveAction;
-    private InputAction tapAction;
+    [Header("Movimiento")]
+    [SerializeField] private Transform targetObject;
+    [SerializeField] private float speed = 5f;
 
-    private void Awake()
-    {
-        if (playerInput == null) playerInput = GetComponent<PlayerInput>();
-        moveAction = playerInput.actions["Move"];
-        tapAction = playerInput.actions["Tap"];
-    }
+    [Header("Interfaz")]
+    [SerializeField] private TMP_Text txtVectorInfo;
 
     private void OnEnable()
     {
-        if (tapAction != null) tapAction.performed += OnTap;
+        if (moveAction != null)
+        {
+            moveAction.action.Enable();
+        }
     }
 
     private void OnDisable()
     {
-        if (tapAction != null) tapAction.performed -= OnTap;
-    }
-
-    private void OnTap(InputAction.CallbackContext context)
-    {
-        Debug.Log("Tap ejecutado");
+        if (moveAction != null)
+        {
+            moveAction.action.Disable();
+        }
     }
 
     private void Update()
     {
-        if (moveAction != null)
-        {
-            Vector2 moveInput = moveAction.ReadValue<Vector2>();
-            Vector3 movement = new Vector3(moveInput.x, 0, moveInput.y);
-            if (moveInput.sqrMagnitude > 0.01f)
-            {
-                Debug.Log("MOVE RECIBIDO: " + moveInput);
-            }
-            if (targetObject != null)
-            {
-                targetObject.Translate(movement * speed * Time.deltaTime, Space.World);
-            }
+        if (moveAction == null)
+            return;
 
-            if (txtVectorInfo != null)
-            {
-                txtVectorInfo.text = $"Move Vector: {moveInput}\nDirección: {moveInput.normalized}";
-            }
+        // Leer directamente Player/Move
+        Vector2 moveInput =
+            moveAction.action.ReadValue<Vector2>();
+
+        // Movimiento en X e Y
+        Vector3 movement = new Vector3(
+            moveInput.x,
+            moveInput.y,
+            0f
+        );
+
+        if (targetObject != null)
+        {
+            targetObject.position +=
+                movement *
+                speed *
+                Time.deltaTime;
+        }
+
+        // Dirección normalizada
+        Vector2 normalizedDirection =
+            moveInput.sqrMagnitude > 0.001f
+            ? moveInput.normalized
+            : Vector2.zero;
+
+        // Mostrar información
+        if (txtVectorInfo != null)
+        {
+            txtVectorInfo.text =
+                $"Move Vector: ({moveInput.x:F2}, {moveInput.y:F2})\n" +
+                $"Dirección: ({normalizedDirection.x:F2}, {normalizedDirection.y:F2})";
         }
     }
 }
