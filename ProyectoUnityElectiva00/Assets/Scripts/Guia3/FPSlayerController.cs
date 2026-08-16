@@ -32,6 +32,9 @@ public class FPSPlayerController : MonoBehaviour
 
     private void Update()
     {
+        // 👇 LÍNEA AGREGADA: Si el juego se pausa (Time.timeScale == 0), no mueve personaje ni cámara
+        if (Time.timeScale == 0f) return;
+
         MovePlayer();
         RotateCamera();
     }
