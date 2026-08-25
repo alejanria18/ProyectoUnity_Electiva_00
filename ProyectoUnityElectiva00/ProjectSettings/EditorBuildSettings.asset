@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/InteraccionMetaforas.unity
     guid: 70acf30f9e1ecf74a88554b3fe9fa428
   - enabled: 1
+    path: Assets/Scenes/Proyect/MainMenu.unity
+    guid: a5749e14cb1195e4e933415fdb320d5f
+  - enabled: 1
     path: Assets/Scenes/Proyect/Level1.unity
     guid: 652d173b25f427a469cce56ebaa7b636
   m_configObjects:
