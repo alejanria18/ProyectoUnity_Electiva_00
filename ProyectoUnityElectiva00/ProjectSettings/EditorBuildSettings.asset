@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Proyect/MainMenu.unity
     guid: a5749e14cb1195e4e933415fdb320d5f
   - enabled: 1
-    path: Assets/Scenes/Proyect/Level1.unity
+    path: Assets/Scenes/Proyect/LevelVisual.unity
     guid: 652d173b25f427a469cce56ebaa7b636
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

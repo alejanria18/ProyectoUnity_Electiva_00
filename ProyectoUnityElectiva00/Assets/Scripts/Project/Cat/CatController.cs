@@ -1,144 +1,129 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CatController : MonoBehaviour
 {
-    [Header("Movement")]
-    public float moveSpeed = 5f;
+    [Header("Movimiento")]
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float jumpForce = 10f;
 
-    [Header("Jump")]
-    public float jumpForce = 8f;
+    [Header("Joystick")]
+    [SerializeField] private JoyStickMover joystick;
 
-    [Header("Mobile Jump Zone")]
-    [Range(0f, 1f)]
-    [SerializeField] private float jumpZoneWidth = 0.25f;
-
-    [Range(0f, 1f)]
-    [SerializeField] private float jumpZoneHeight = 0.30f;
+    [Header("Animacion")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius = 0.15f;
+    [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D rb;
 
-    private InputAction moveAction;
-    private InputAction jumpAction;
-
     private bool isGrounded;
-
-    [SerializeField] private int maxJumps = 2;
-    private int jumpsRemaining;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        var input = GetComponent<PlayerInput>();
-
-        moveAction = input.actions["Move"];
-        jumpAction = input.actions["Jump"];
-
-        jumpsRemaining = maxJumps;
     }
 
-    private void OnEnable()
+    private void Update()
     {
-        moveAction.Enable();
-        jumpAction.Enable();
-    }
-
-    private void OnDisable()
-    {
-        moveAction.Disable();
-        jumpAction.Disable();
+        CheckGround();
+        UpdateAnimations();
+        FlipCat();
     }
 
     private void FixedUpdate()
     {
-        Vector2 input = moveAction.ReadValue<Vector2>();
+        Move();
+
+    }
+
+    private void Move()
+    {
+        if (joystick == null)
+            return;
+
+        float horizontal = joystick.Horizontal;
 
         rb.linearVelocity = new Vector2(
-            input.x * moveSpeed,
+            horizontal * moveSpeed,
             rb.linearVelocity.y
         );
     }
 
-    private void Update()
+    public void Jump()
+    {
+     
+
+        if (!isGrounded)
+            return;
+
+        rb.linearVelocity = new Vector2(
+            rb.linearVelocity.x,
+            jumpForce
+        );
+
+     
+    }
+
+   
+
+    private void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle(
             groundCheck.position,
             groundCheckRadius,
             groundLayer
         );
-
-        if (isGrounded)
-        {
-            jumpsRemaining = maxJumps;
-        }
-
-        if (jumpAction.WasPerformedThisFrame())
-        {
-            // Si el salto viene del teclado, funciona normalmente
-            if (jumpAction.activeControl?.device is Keyboard)
-            {
-                TryJump();
-            }
-            // Si viene del móvil, solamente funciona
-            // dentro de la zona invisible de salto
-            else if (IsTouchInsideJumpZone())
-            {
-                TryJump();
-            }
-        }
     }
 
-    private void TryJump()
+    private void UpdateAnimations()
     {
-        if (jumpsRemaining <= 0)
+        if (animator == null)
             return;
 
-        Jump();
-        jumpsRemaining--;
-    }
+        animator.SetFloat(
+            "Speed",
+            Mathf.Abs(joystick.Horizontal)
+        );
 
-    private void Jump()
-    {
-        rb.linearVelocity = new Vector2(
-            rb.linearVelocity.x,
-            jumpForce
+        animator.SetBool(
+            "IsGrounded",
+            isGrounded
+        );
+
+        animator.SetFloat(
+            "YVelocity",
+            rb.linearVelocity.y
         );
     }
-
-    private bool IsTouchInsideJumpZone()
+    private void FlipCat()
     {
-        if (Touchscreen.current == null)
-            return false;
+        if (spriteRenderer == null)
+            return;
 
-        Vector2 touchPosition =
-            Touchscreen.current.primaryTouch.position.ReadValue();
-
-        float zoneWidth = Screen.width * jumpZoneWidth;
-        float zoneHeight = Screen.height * jumpZoneHeight;
-
-        bool insideRight =
-            touchPosition.x >= Screen.width - zoneWidth;
-
-        bool insideBottom =
-            touchPosition.y <= zoneHeight;
-
-        return insideRight && insideBottom;
+        if (joystick.Horizontal > 0.05f)
+        {
+            // Derecha
+            spriteRenderer.flipX = true;
+        }
+        else if (joystick.Horizontal < -0.05f)
+        {
+            // Izquierda
+            spriteRenderer.flipX = false;
+        }
     }
 
     private void OnDrawGizmosSelected()
     {
-        if (groundCheck == null)
-            return;
-
-        Gizmos.DrawWireSphere(
-            groundCheck.position,
-            groundCheckRadius
-        );
+        if (groundCheck != null)
+        {
+            Gizmos.DrawWireSphere(
+                groundCheck.position,
+                groundCheckRadius
+            );
+        }
     }
 }
