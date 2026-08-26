@@ -581,7 +581,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jugar
+  m_text: JUGAR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 262efbb6dbaaa4b44a68ed07a1e9d01e, type: 2}
   m_sharedMaterial: {fileID: 901418811028464031, guid: 262efbb6dbaaa4b44a68ed07a1e9d01e, type: 2}

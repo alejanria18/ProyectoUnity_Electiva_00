@@ -1,8 +1,22 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI; // Para controlar la barra (Slider)
+using TMPro;          // Para controlar el texto de vidas
 
 public class CatController : MonoBehaviour
 {
+    [Header("Conexión con la Interfaz (UI)")]
+    public UIManager uiManager;
+
+    [Header("HUD Superior en Pantalla")]
+    public Slider barraComida;               // La barrita de comida
+    public TextMeshProUGUI txtContadorVidas; // El texto de vidas arriba
+
+    [Header("Estadísticas del Gato")]
+    public int vidas = 3;
+    public int comidaRecolectada = 0;
+    public int metaComida = 10;
+
     [Header("Movement")]
     public float moveSpeed = 5f;
 
@@ -22,10 +36,8 @@ public class CatController : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.15f;
 
     private Rigidbody2D rb;
-
     private InputAction moveAction;
     private InputAction jumpAction;
-
     private bool isGrounded;
 
     [SerializeField] private int maxJumps = 2;
@@ -34,13 +46,25 @@ public class CatController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
         var input = GetComponent<PlayerInput>();
 
         moveAction = input.actions["Move"];
         jumpAction = input.actions["Jump"];
 
         jumpsRemaining = maxJumps;
+    }
+
+    private void Start()
+    {
+        // Configuramos la barra de comida con la meta del nivel
+        if (barraComida != null)
+        {
+            barraComida.minValue = 0;
+            barraComida.maxValue = metaComida;
+            barraComida.value = comidaRecolectada;
+        }
+
+        ActualizarHUD();
     }
 
     private void OnEnable()
@@ -80,17 +104,27 @@ public class CatController : MonoBehaviour
 
         if (jumpAction.WasPerformedThisFrame())
         {
-            // Si el salto viene del teclado, funciona normalmente
             if (jumpAction.activeControl?.device is Keyboard)
             {
                 TryJump();
             }
-            // Si viene del m�vil, solamente funciona
-            // dentro de la zona invisible de salto
             else if (IsTouchInsideJumpZone())
             {
                 TryJump();
             }
+        }
+
+        // --- TECLAS DE PRUEBA EN PC ---
+        // Presiona 'C' para simular comer comida (+1 punto)
+        if (Keyboard.current != null && Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            SumarComida(1);
+        }
+
+        // Presiona 'X' para simular recibir daño (-1 vida)
+        if (Keyboard.current != null && Keyboard.current.xKey.wasPressedThisFrame)
+        {
+            RecibirDano(1);
         }
     }
 
@@ -129,6 +163,52 @@ public class CatController : MonoBehaviour
             touchPosition.y <= zoneHeight;
 
         return insideRight && insideBottom;
+    }
+
+    // --- ACTUALIZAR LA PANTALLA ---
+    private void ActualizarHUD()
+    {
+        if (barraComida != null)
+        {
+            barraComida.value = comidaRecolectada;
+        }
+
+        if (txtContadorVidas != null)
+        {
+            txtContadorVidas.text = "Vidas: " + vidas;
+        }
+    }
+
+    // Sumar comida y verificar victoria
+    public void SumarComida(int puntos)
+    {
+        comidaRecolectada += puntos;
+        ActualizarHUD();
+
+        if (comidaRecolectada >= metaComida)
+        {
+            if (uiManager != null)
+            {
+                uiManager.MostrarVictoria(comidaRecolectada, vidas);
+            }
+        }
+    }
+
+    // Recibir daño y verificar derrota
+    public void RecibirDano(int cantidad)
+    {
+        vidas -= cantidad;
+        if (vidas < 0) vidas = 0;
+        
+        ActualizarHUD();
+
+        if (vidas <= 0)
+        {
+            if (uiManager != null)
+            {
+                uiManager.MostrarGameOver();
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()
