@@ -2079,7 +2079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3946897033781700263, guid: 2bde7437479e8f448ad5f052746bdf4b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7320055621405281350, guid: 2bde7437479e8f448ad5f052746bdf4b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2603,6 +2603,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77c81dccd2fc06499e05a104acdc6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatController
+  uiManager: {fileID: 1741499960}
+  barraComida: {fileID: 621860294}
+  txtContadorVidas: {fileID: 392312985}
+  vidas: 3
+  comidaRecolectada: 0
+  metaComida: 10
   moveSpeed: 3
   jumpForce: 8
   jumpZoneWidth: 0.25
